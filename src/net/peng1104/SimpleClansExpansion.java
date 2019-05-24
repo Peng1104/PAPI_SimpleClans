@@ -27,7 +27,7 @@ public class SimpleClansExpansion extends PlaceholderExpansion {
 
 	@Override
 	public String getVersion() {
-		return "2.0.0";
+		return "2.0.2";
 	}
 	
 	@Override
@@ -206,7 +206,7 @@ public class SimpleClansExpansion extends PlaceholderExpansion {
 			case "clan_tag": {
 				return c.getTag();
 			}
-			case "clan_founded_string": {
+			case "clan_founded": {
 				return c.getFoundedString();
 			}
 			case "clan_friendly_fire": {
@@ -218,7 +218,7 @@ public class SimpleClansExpansion extends PlaceholderExpansion {
 			case "clan_is_anyonline": {
 				return c.isAnyOnline() ? PlaceholderAPIPlugin.booleanTrue() : PlaceholderAPIPlugin.booleanFalse();
 			}
-			case "clans_is_verified": {
+			case "clan_is_verified": {
 				return c.isVerified() ? PlaceholderAPIPlugin.booleanTrue() : PlaceholderAPIPlugin.booleanFalse();
 			}
 			case "clan_capeurl": {
