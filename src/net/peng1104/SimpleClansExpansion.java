@@ -27,7 +27,7 @@ public class SimpleClansExpansion extends PlaceholderExpansion {
 
 	@Override
 	public String getVersion() {
-		return "2.0.2";
+		return "2.0.3";
 	}
 	
 	@Override
@@ -93,10 +93,10 @@ public class SimpleClansExpansion extends PlaceholderExpansion {
 				return player.isLeader() ? PlaceholderAPIPlugin.booleanTrue() : PlaceholderAPIPlugin.booleanFalse();
 			}
 			case "is_trusted": {
-				return player.isTrusted() ? PlaceholderAPIPlugin.booleanTrue() : PlaceholderAPIPlugin.booleanFalse();
+				return (!player.isLeader() && player.isTrusted()) ? PlaceholderAPIPlugin.booleanTrue() : PlaceholderAPIPlugin.booleanFalse();
 			}
 			case "is_member": {
-				return (!player.isTrusted() && !player.isLeader()) ? PlaceholderAPIPlugin.booleanTrue() : PlaceholderAPIPlugin.booleanFalse();
+				return (!player.isTrusted() && !player.isLeader() && player.getClan() != null) ? PlaceholderAPIPlugin.booleanTrue() : PlaceholderAPIPlugin.booleanFalse();
 			}
 			case "is_bb_enabled": {
 				return player.isBbEnabled() ? PlaceholderAPIPlugin.booleanTrue() : PlaceholderAPIPlugin.booleanFalse();
