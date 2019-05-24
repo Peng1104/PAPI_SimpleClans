@@ -2,10 +2,7 @@ package net.peng1104;
 
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
-import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 
-import me.clip.placeholderapi.PlaceholderAPI;
 import me.clip.placeholderapi.PlaceholderAPIPlugin;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 
@@ -42,7 +39,7 @@ public class SimpleClansExpansion extends PlaceholderExpansion {
 	public boolean register() {
 		boolean result = false;
 		
-		Plugin simpleClans = Bukkit.getPluginManager().getPlugin(getPlugin());
+		SimpleClans simpleClans = (SimpleClans) Bukkit.getPluginManager().getPlugin(getPlugin());
 		
 		if (simpleClans != null) {
 			if (!simpleClans.isEnabled()) {
@@ -51,15 +48,10 @@ public class SimpleClansExpansion extends PlaceholderExpansion {
 			clanManager = SimpleClans.getInstance().getClanManager();
 			
 			if (clanManager != null) {
-				result = PlaceholderAPI.registerPlaceholderHook(getIdentifier(), this);
+				result = super.register();
 			}
 		}
 		return result;
-	}
-	
-	@Override
-	public String onPlaceholderRequest(Player p, String params) {
-		return onRequest(p, params);
 	}
 	
 	@Override
