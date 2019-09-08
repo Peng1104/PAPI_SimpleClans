@@ -200,9 +200,6 @@ public class SimpleClansExpansion extends PlaceholderExpansion {
 			case "clan_color_tag": {
 				return c.getColorTag();
 			}
-			case "clan_tag_label": {
-				return c.getTagLabel();
-			}
 			case "clan_tag": {
 				return c.getTag();
 			}
