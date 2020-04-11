@@ -149,6 +149,9 @@ public class SimpleClansExpansion extends PlaceholderExpansion {
 			case "rank": {
 				return player.getRank();
 			}
+			case "rank_displayname": {
+				return player.getRankDisplayName();
+			}
 			default:
 				break;
 		}
